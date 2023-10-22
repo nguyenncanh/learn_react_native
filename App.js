@@ -155,7 +155,7 @@ export default function App() {
                   borderColor: "#c1c1c1",
                   borderRadius: 20,
                 }}
-                placeholder="Please enter the username"
+                placeholder="Please enter your username"
                 placeholderTextColor="#979c9f"
                 value={username}
                 onChangeText={handleChangeUsername}
@@ -174,7 +174,7 @@ export default function App() {
                     marginBottom: 14,
                   }}
                   secureTextEntry={isShowPassword}
-                  placeholder="Please enter the password"
+                  placeholder="Please enter your password"
                   placeholderTextColor="#979c9f"
                   value={password}
                   onChangeText={handleChangePassword}
