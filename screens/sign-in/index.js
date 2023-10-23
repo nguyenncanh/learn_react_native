@@ -69,25 +69,27 @@ export default function SignInScreen() {
             onChangeText={handleChangeUsername}
             isError={isError?.username}
           />
-          <View style={styles.passwordInput}>
-            <PasswordInput
-              placeholder="Enter password"
-              placeholderTextColor="#979c9f"
-              value={password}
-              onChangeText={handleChangePassword}
-              isError={isError?.password}
-            />
-          </View>
-
+          <PasswordInput
+            placeholder="Enter password"
+            placeholderTextColor="#979c9f"
+            value={password}
+            onChangeText={handleChangePassword}
+            isError={isError?.password}
+          />
           <Pressable style={styles.signInPressable} onPress={handleSignIn}>
             <Text style={{ color: "#fff" }}>Sign in</Text>
           </Pressable>
-          <Text style={styles.signUpText}>
-            If you don't have account. Let's sign up!
-          </Text>
-          <Pressable style={styles.signUpPressable} onPress={handleToSignUp}>
-            <Text style={{ color: "#fff" }}>Sign up</Text>
-          </Pressable>
+          <View style={styles.signupContainer}>
+            <Text style={styles.signUpText}>
+              If you don't have account.{" "}
+              <Text style={[styles.signUpText, styles.signupTextColor]}>
+                Let's sign up!
+              </Text>
+            </Text>
+            <Pressable style={styles.signUpPressable} onPress={handleToSignUp}>
+              <Text style={{ color: "#fff" }}>Sign up</Text>
+            </Pressable>
+          </View>
         </View>
       </View>
     </>
@@ -136,6 +138,7 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     marginTop: 40,
+    rowGap: 15,
   },
 
   usernameInput: {
@@ -145,12 +148,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#c1c1c1",
     borderRadius: 20,
-  },
-
-  passwordInput: {
-    width: "100%",
-    marginTop: 15,
-    marginBottom: 15,
   },
 
   signInPressable: {
@@ -166,12 +163,22 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 
+  signupContainer: {
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    rowGap: 10,
+  },
+
   signUpText: {
     fontSize: 12,
-    marginBottom: 10,
-    marginTop: 10,
     color: "#88898E",
     fontStyle: "italic",
+  },
+
+  signupTextColor: {
+    color: "#FF5733",
   },
 
   signUpPressable: {

@@ -77,15 +77,13 @@ export default function SignUpScreen() {
             onChangeText={handleChangeUsername}
             isError={isError?.username}
           />
-          <View style={styles.passwordInput}>
-            <PasswordInput
-              placeholder="Enter password"
-              placeholderTextColor="#979c9f"
-              value={password}
-              onChangeText={handleChangePassword}
-              isError={isError?.password}
-            />
-          </View>
+          <PasswordInput
+            placeholder="Enter password"
+            placeholderTextColor="#979c9f"
+            value={password}
+            onChangeText={handleChangePassword}
+            isError={isError?.password}
+          />
           <PasswordInput
             placeholder="Enter confirm password"
             placeholderTextColor="#979c9f"
@@ -97,37 +95,13 @@ export default function SignUpScreen() {
           <Pressable style={styles.signUpPressable} onPress={handleSignUp}>
             <Text style={{ color: "#fff" }}>Sign up</Text>
           </Pressable>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              marginBottom: 10,
-              marginTop: 20,
-            }}
-          >
+          <View style={styles.goBackContainer}>
             <View>
-              <Text
-                style={{
-                  fontSize: 14,
-                  color: "#88898E",
-                  fontStyle: "italic",
-                }}
-              >
-                Go back to
-              </Text>
+              <Text style={styles.goBackText}>Go back to</Text>
             </View>
             <View style={{ marginLeft: 4 }}>
               <Pressable onPress={handleToSignIn}>
-                <Text
-                  style={{
-                    fontSize: 14,
-                    color: "#2D436D",
-                    fontStyle: "italic",
-                    fontWeight: "bold",
-                    textDecorationLine: "underline",
-                  }}
-                >
+                <Text style={[styles.goBackText, styles.signInText]}>
                   Sign In
                 </Text>
               </Pressable>
@@ -181,6 +155,7 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     marginTop: 40,
+    rowGap: 15,
   },
 
   usernameInput: {
@@ -190,12 +165,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#c1c1c1",
     borderRadius: 20,
-  },
-
-  passwordInput: {
-    width: "100%",
-    marginTop: 15,
-    marginBottom: 15,
   },
 
   signUpPressable: {
@@ -209,5 +178,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 20,
+  },
+
+  goBackContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+    marginTop: 20,
+  },
+
+  goBackText: {
+    fontSize: 14,
+    color: "#88898E",
+    fontStyle: "italic",
+  },
+
+  signInText: {
+    fontWeight: "bold",
+    textDecorationLine: "underline",
+    color: "#2D436D",
   },
 });

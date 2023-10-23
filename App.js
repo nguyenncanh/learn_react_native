@@ -8,8 +8,8 @@ import {
 } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { SignInScreen } from "./screens";
-// import { SignUpScreen } from "./screens";
+// import { SignInScreen } from "./screens";
+import { SignUpScreen } from "./screens";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -38,8 +38,8 @@ export default function App() {
         behavior="padding"
       >
         <View style={styles.container} onLayout={onLayoutRootView}>
-          <SignInScreen />
-          {/* <SignUpScreen /> */}
+          {/* <SignInScreen /> */}
+          <SignUpScreen />
         </View>
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
